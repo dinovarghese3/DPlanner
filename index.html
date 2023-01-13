@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DPlanner Budget Management</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link href="./style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+    </script>
+</head>
+
+<body>
+    <div class="main_container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+                aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="#">DPlanner</a>
+    </div>
+    </nav>
+    <div class="data_content">
+        <div class="set_balance" display="none">
+            <div class="alert alert-warning" role="alert">
+                <span>Set Your Initial Balance </span><span class="add_initial_balance_span">
+                    <input type="number" class="form-control add_initial_balance"></span>
+                <spn><button type="submit" class="btn btn-secondary" id="set_intial_balance">Save</button></spn>
+            </div>
+        </div>
+        <div class="header_cards">
+            <div class="card add_card" style="width: 18rem;" id="add-entry-btn">
+                <div class="card-body">
+                    <center>
+                        <span><a class="fa fa-plus"  data-toggle="modal" data-target="#addNewEntry"
+                                href="#"></a></span>
+
+                    </center>
+                </div>
+            </div>
+            <div class="card balance_card" style="width: 18rem;">
+                <div class="card-body">
+                    <h2 class="card-title"><b>Balance</b></h2>
+                    <p class="card-sub">Available Balance</p>
+                    <p class="card-text" ><span>$<input type="text" class="value_fields" id="availabe_bal" readonly></input></span></p>
+                </div>
+            </div>
+            <div class="card total_income_card" style="width: 18rem;">
+                <div class="card-body">
+                    <h2 class="card-title"><b>Income</b></h2>
+                    <p class="card-sub">Total Income</p>
+                    <p class="card-text"><span>$<input type="text" class="value_fields" id="total_income" readonly></input></span></p>
+                </div>
+            </div>
+            <div class="card total_expense_card" style="width: 18rem;">
+                <div class="card-body">
+                    <h2 class="card-title"><b>Expense</b></h2>
+                    <p class="card-sub">Total Balance</p>
+                    <p class="card-text"><span>- $<input type="text" class="value_fields" id="total_expense" readonly></input></span></p>
+                </div>
+            </div>
+        </div>
+        <div class="table entry_tabel_header">
+            <h5><b> Account</b></h5>
+        </div>
+        <div class="content_tables">
+            <table class="table entry_header">
+
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Sl No</th>
+                        <th scope="col">Details</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Amount</th>
+                    </tr>
+                </thead>
+                <tbody id="entry_items">
+
+                </tbody>
+                <tfoot id ='total_amt' class="table_footer">
+                    
+                </tfoot>
+            </table>
+        </div>
+    </div>
+
+    <div class="modal fade" id="addNewEntry" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6 class="modal-title">
+                        <i class="fa fa-plus"></i>
+                        Add New Entry
+                    </h6>
+                    <button type="button" class="close" data-dismiss="modal">
+                        &times;
+                    </button>
+
+                </div>
+                <div class="modal-body" id="cart-content">
+                    <div id="Entry-Content">
+                        <div>
+                            <label for="description_field">Description</label>
+                            <input type="text" name="description_field" id="description_text" class="form-control" />
+                        </div>
+                        <div>
+                            <label for="type_field">Type</label>
+                            <select class="form-control" id="type_field">
+                                <option value="income">
+                                    Income
+                                </option>
+                                <option value="expense">
+                                    Expense
+                                </option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="amount_field">Amount</label>
+                            <input type="text" name="amount_field" id="amount_text" class="form-control" />
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-success" id="btn-save" data-dismiss="modal">
+                        Save
+                    </button>
+                    <button type="button" class="btn btn-outline-danger" id="btn-close" data-dismiss="modal">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    </div>
+    <footer>
+        <script src="./planner.js"></script>
+    </footer>
+</body>
+
+</html>

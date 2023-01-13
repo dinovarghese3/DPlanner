@@ -1,0 +1,108 @@
+body{
+    background-color: antiquewhite;
+}
+.alert.alert-warning{
+    display: flex;
+    flex-wrap:nowrap;
+    justify-content: center;
+}
+input.form-control.add_initial_balance{
+
+    width: 100% !important;
+    margin-left:5%;
+    margin-right:5%;
+}
+.add_initial_balance_span{
+    width: 10% !important; 
+    padding-right:1%;
+}
+.data_content{
+
+    background: antiquewhite;
+}
+.card.add_card{
+    background:linear-gradient(to left,#ffafbd .5%, #ffc3a0 90%);
+    /* opacity: .6; */
+    border-radius:5px 5px 5px 5px;
+    margin-right: 1%;
+}
+
+.card.balance_card{
+    background:linear-gradient(to left,#ffafbd .5%, #ffc3a0 90%);
+    /* opacity: .6; */
+    border-radius:5px 5px 5px 5px;
+    margin-right: 1%;
+}
+.card.total_income_card{
+    background:linear-gradient(to left,#eacda3 .5%, #eacda3 90%);
+    border-radius:5px 5px 5px 5px;
+    margin-right: 1%;
+}
+.card.total_expense_card{
+    background:linear-gradient(to left,#2193b0 .5%, #6dd5ed 90%);
+    border-radius:5px 5px 5px 5px;
+    margin-right: 1%;
+}
+.card.other_card{
+    background:linear-gradient(to left,#77c553 .5%, #86af55 90%);
+    border-radius:5px 5px 5px 5px;
+    margin-right: 1%;
+}
+.header_cards{
+    display: flex;
+    padding: 1%;
+    margin-left:15%;
+}
+table.table.entry_header{
+    margin-left:1%;
+    width: 50%;
+}
+
+.content_tables {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding-right: 10px;
+}
+
+.table.entry_tabel_header {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+a.fa.fa-plus {
+    font-size: 100px;
+    font-weight: 200;
+    color: white;
+}
+a#add-entry-btn {
+    text-decoration: none;
+}
+.modal-content{
+    background-color:#efe9e2;
+}
+tbody#entry_items{
+    background: white;
+}
+tfoot#total_amt{
+    background: white;
+}
+input.value_fields {
+    background: transparent;
+    border: none;
+}
+td.total_label {
+    text-align: right;
+}
+a.fa.fa-plus:hover{
+    text-decoration: none;
+
+}
+input.value_fields:focus{
+    outline: none;
+
+}
+p.card-sub {
+    color: dimgray;
+}
